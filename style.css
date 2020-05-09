@@ -1,0 +1,42 @@
+ul {
+    list-style-type: none;
+    padding: 0px 10px;
+}
+
+li {
+    padding: 5px;
+    margin: 5px;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+}
+
+li.item-parent::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    background: url("icons/keyboard_arrow_right-24px.svg") no-repeat;
+    width: 25px;
+    height: 25px;
+    margin: 0px;
+}
+
+li.item-parent--open::before {
+    background: url("icons/keyboard_arrow_down-24px.svg") no-repeat;
+}
+
+li.item-parent {
+    color: blue;
+    position: relative;
+}
+
+li:not(.item-parent) {
+    color: black;
+}
+
+li.item-parent > a {
+    margin-left: 20px;
+}
